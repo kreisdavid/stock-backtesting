@@ -129,8 +129,11 @@ def shortBasedOnDate(learn, test):
     windows = findWindows(learnSet) #implement
     results = applyWindow(testSet, windows) #implement
 
-    retVal = windows + results
-    
+    retVal = []
+    for i in range(0, len(windows)):
+        middleman = [windows[i]] + [results[i]]
+        retVal += middleman
+    # [ [[start, end], n1 ], [[start, end], n2], [[start, end], n3] ]
     return retVal
 
 def main():
