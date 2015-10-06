@@ -114,10 +114,24 @@ infile.readline().split(',')
 
 
 """
+#this function takes stocks and returns the filepaths the stocks can be found at
+def makeFilePaths(ls):
+    retList = []
+    for name in ls.split():
+        retList += ["/Users/user/Documents/StockData/" + name + ".csv"]
+    return retList
 
+#determine if there was a good date to start shorting and a good window during which to hold before covering
 def shortBasedOnDate(learn, test):
+    learnSet = makeFilePaths(learn)
+    testSet = makeFilePaths(test)
     
+    windows = findWindows(learnSet) #implement
+    results = applyWindow(testSet, windows) #implement
 
+    retVal = windows + results
+    
+    return retVal
 
 def main():
     stocks = open("/Users/user/Documents/College/Year2/Semester1/Econ/TestingStockList.txt", "r")
@@ -136,7 +150,9 @@ def main():
         else:
             testSet += [name]
 
-    shortBasedOnDate(learningSet, testSet) #NEED TO IMPLEMENT
+    resultsList = shortBasedOnDate(learningSet, testSet) #NEED TO IMPLEMENT
+
+    
     
     
 if __name__ == "__main__":
