@@ -1,118 +1,5 @@
 """
 
-infile = open("/Users/user/Documents/StockData/Twitter.csv", "r")
-infile.readline()
-'Date,Open,High,Low,Close,Volume,Adj Close\n'
-
-infile.readline().split(',')
-#### ['10/1/15', '26.469999', '26.84', '24.65', '24.68', '30619200', '24.68\n']
-
->>> infile.readline()
-'9/30/15,25.940001,27.33,25.879999,26.940001,25208200,26.940001\n'
-
->>> infile.readline().strip('\n').split(',')
-['9/29/15', '25.23', '25.76', '24.92', '25.59', '13378700', '25.59']
-
-
-
->>> l = open("/Users/user/Documents/College/Year2/Semester1/Econ/TestingStockList.txt", "r")
->>> splited = l.read().split()
->>> splited
-['Actua', 'AkamaiTechnologies', 'Amazon', 'AngiesList', 'Baidu', 'Bazaarvoice', 'CA', 'Carbonite', 'ChangeYou', 'ChannelAdvisor', 'Cisco', 'CitrixSystems', 'CognizantTechnologySolutions', 'ConstantContact', 'CornerstoneOndemand', 'CoStarGroup', 'Criteo', 'DemandMedia', 'Demandware', 'DHIgroup', 'eBay', 'eGain', 'EMC', 'EnduranceInternational', 'Envestnet', 'Expedia', 'F5Networks', 'Facebook', 'Gogo', 'Groupon', 'HomeAway', 'IAC', 'IntraLink', 'Intuit', 'Jive', 'Juniper', 'Limelight', 'Linkedin', 'LivePerson', 'Marchex', 'MarinSoftware', 'Marketo', 'MonsterWorldWide', 'NetEase', 'Netflix', 'NetSuite', 'Nutrisystem', 'Overstock', 'Pandora', 'PricelineGroup', 'Proofpoint', 'Qualys', 'QuinStreet', 'RackspaceHosting', 'RealNetworks', 'RedHat', 'Reis', 'Renren', 'RetailMeNot', 'RocketFuel', 'Salesforce', 'SciQuest', 'Shutterstock', 'SINA', 'SouFunHoldings', 'SparkNetworks', 'Symantec', 'TechTarget', 'Textura', 'TripAdvisor', 'Twitter', 'UnitedOnline', 'Veeva', 'VipshopHoldings', 'VMware', 'WebMD', 'Workday', 'WWWW', 'XOgroup', 'XoomCorporation', 'Yahoo', 'Yelp', 'YoukuTodou', 'YuMe', 'YY', 'Zynga']
->>> for company in splited:
-	twt = "/Users/user/Documents/StockData/" + company + ".csv"
-	print(twt)
-
-	
-/Users/user/Documents/StockData/Actua.csv
-/Users/user/Documents/StockData/AkamaiTechnologies.csv
-/Users/user/Documents/StockData/Amazon.csv
-/Users/user/Documents/StockData/AngiesList.csv
-/Users/user/Documents/StockData/Baidu.csv
-/Users/user/Documents/StockData/Bazaarvoice.csv
-/Users/user/Documents/StockData/CA.csv
-/Users/user/Documents/StockData/Carbonite.csv
-/Users/user/Documents/StockData/ChangeYou.csv
-/Users/user/Documents/StockData/ChannelAdvisor.csv
-/Users/user/Documents/StockData/Cisco.csv
-/Users/user/Documents/StockData/CitrixSystems.csv
-/Users/user/Documents/StockData/CognizantTechnologySolutions.csv
-/Users/user/Documents/StockData/ConstantContact.csv
-/Users/user/Documents/StockData/CornerstoneOndemand.csv
-/Users/user/Documents/StockData/CoStarGroup.csv
-/Users/user/Documents/StockData/Criteo.csv
-/Users/user/Documents/StockData/DemandMedia.csv
-/Users/user/Documents/StockData/Demandware.csv
-/Users/user/Documents/StockData/DHIgroup.csv
-/Users/user/Documents/StockData/eBay.csv
-/Users/user/Documents/StockData/eGain.csv
-/Users/user/Documents/StockData/EMC.csv
-/Users/user/Documents/StockData/EnduranceInternational.csv
-/Users/user/Documents/StockData/Envestnet.csv
-/Users/user/Documents/StockData/Expedia.csv
-/Users/user/Documents/StockData/F5Networks.csv
-/Users/user/Documents/StockData/Facebook.csv
-/Users/user/Documents/StockData/Gogo.csv
-/Users/user/Documents/StockData/Groupon.csv
-/Users/user/Documents/StockData/HomeAway.csv
-/Users/user/Documents/StockData/IAC.csv
-/Users/user/Documents/StockData/IntraLink.csv
-/Users/user/Documents/StockData/Intuit.csv
-/Users/user/Documents/StockData/Jive.csv
-/Users/user/Documents/StockData/Juniper.csv
-/Users/user/Documents/StockData/Limelight.csv
-/Users/user/Documents/StockData/Linkedin.csv
-/Users/user/Documents/StockData/LivePerson.csv
-/Users/user/Documents/StockData/Marchex.csv
-/Users/user/Documents/StockData/MarinSoftware.csv
-/Users/user/Documents/StockData/Marketo.csv
-/Users/user/Documents/StockData/MonsterWorldWide.csv
-/Users/user/Documents/StockData/NetEase.csv
-/Users/user/Documents/StockData/Netflix.csv
-/Users/user/Documents/StockData/NetSuite.csv
-/Users/user/Documents/StockData/Nutrisystem.csv
-/Users/user/Documents/StockData/Overstock.csv
-/Users/user/Documents/StockData/Pandora.csv
-/Users/user/Documents/StockData/PricelineGroup.csv
-/Users/user/Documents/StockData/Proofpoint.csv
-/Users/user/Documents/StockData/Qualys.csv
-/Users/user/Documents/StockData/QuinStreet.csv
-/Users/user/Documents/StockData/RackspaceHosting.csv
-/Users/user/Documents/StockData/RealNetworks.csv
-/Users/user/Documents/StockData/RedHat.csv
-/Users/user/Documents/StockData/Reis.csv
-/Users/user/Documents/StockData/Renren.csv
-/Users/user/Documents/StockData/RetailMeNot.csv
-/Users/user/Documents/StockData/RocketFuel.csv
-/Users/user/Documents/StockData/Salesforce.csv
-/Users/user/Documents/StockData/SciQuest.csv
-/Users/user/Documents/StockData/Shutterstock.csv
-/Users/user/Documents/StockData/SINA.csv
-/Users/user/Documents/StockData/SouFunHoldings.csv
-/Users/user/Documents/StockData/SparkNetworks.csv
-/Users/user/Documents/StockData/Symantec.csv
-/Users/user/Documents/StockData/TechTarget.csv
-/Users/user/Documents/StockData/Textura.csv
-/Users/user/Documents/StockData/TripAdvisor.csv
-/Users/user/Documents/StockData/Twitter.csv
-/Users/user/Documents/StockData/UnitedOnline.csv
-/Users/user/Documents/StockData/Veeva.csv
-/Users/user/Documents/StockData/VipshopHoldings.csv
-/Users/user/Documents/StockData/VMware.csv
-/Users/user/Documents/StockData/WebMD.csv
-/Users/user/Documents/StockData/Workday.csv
-/Users/user/Documents/StockData/WWWW.csv
-/Users/user/Documents/StockData/XOgroup.csv
-/Users/user/Documents/StockData/XoomCorporation.csv
-/Users/user/Documents/StockData/Yahoo.csv
-/Users/user/Documents/StockData/Yelp.csv
-/Users/user/Documents/StockData/YoukuTodou.csv
-/Users/user/Documents/StockData/YuMe.csv
-/Users/user/Documents/StockData/YY.csv
-/Users/user/Documents/StockData/Zynga.csv
-
-
-
 infile = open("/Users/user/Desktop/Example.csv", "r")
 >>> report = infile.read().split()
 >>> report
@@ -150,7 +37,7 @@ import random
 def makeFilePaths(ls):
     retList = []
     for name in ls:
-        retList += ["/Users/user/Documents/StockData/" + name + ".csv"]
+        retList += ["/Users/kreis/Documents/StockData/" + name + ".csv"]
     return retList
 
 #this function takes a set of stocks and finds the 5 best windows
@@ -171,14 +58,15 @@ def findWindow(ls):
         infile = open(stock, "r")
         garbage = infile.readline() #unneeded column headers
         stockDetails = infile.read().split()
-        for line in stockDetails:
+        for line in list(reversed(stockDetails)):
             report += [line.split(",")]
         stocks += [report]   #creates triply nested values
+        infile.close()
 
 
 
-    for startDate in range(31): #start short selling stock between day 0 and day 30
-        for windowWidth in range(61): #hold stock for between 0 and 60 days
+    for startDate in range(61): #start short selling stock between day 0 and day 30
+        for windowWidth in range(121): #hold stock for between 0 and 60 days
             for stockName in stocks:
                 priceAtStart = float(stockName[startDate][4])
                 priceAtCover = float(stockName[startDate+windowWidth][4])
@@ -202,9 +90,10 @@ def applyWindow(ls, window):
         infile = open(stock, "r")
         garbage = infile.readline() #unneeded column headers
         stockDetails = infile.read().split()
-        for line in stockDetails:
+        for line in list(reversed(stockDetails)):
             report += [line.split(",")]
         stocks += [report]
+        infile.close()
 
     #window is [startDate, windowWidth]
     for stockName in stocks:
@@ -222,7 +111,11 @@ def shortBasedOnDate(learn, test):
     testSet = makeFilePaths(test)
     
     window = findWindow(learnSet)
-    result = applyWindow(testSet, window) #implement
+    if window[0] != -1:
+        result = applyWindow(testSet, window) #implement
+    else:
+        window = [46, 99] #the average values from previous trials
+        result = applyWindow(testSet, window) 
 
     retVal = []
     retVal += [window] + [result]
@@ -230,27 +123,61 @@ def shortBasedOnDate(learn, test):
     return retVal
 
 def main():
-    stocks = open("/Users/user/Documents/College/Year2/Semester1/Econ/TestingStockList.txt", "r")
-    #opens a text file of stocks that inlcudes all the stocks we want to test
-    ### that we have csv files for
+    num = 0
+    aggregateResults = 0
+    timesThisWorks = 0
+    timesToTry = 10000
     
-    stockList = stocks.read().split() #splits input into a list
-    learningSet = []
-    testSet = []
-    #splitting stocks into a learning and test set
-    #half in each
-    for name in stockList:
-        rand = random.randint(0, 1)
-        if rand == 0:
-            learningSet += [name]
+    aggregateStartDate = 0
+    aggregateWindowWidth = 0
+    aggregateNegativeResults = 0
+    while num < timesToTry:
+        stocks = open("/Users/kreis/Documents/Programs/stock-backtesting/StockList.txt", "r")
+        #opens a text file of stocks that inlcudes all the stocks we want to test
+        ### that we have csv files for
+        
+        stockList = stocks.read().split() #splits input into a list
+        learningSet = []
+        testSet = []
+        #splitting stocks into a learning and test set
+        #half in each
+        for name in stockList:
+            rand = random.randint(0, 9)
+            if rand < 7:
+                learningSet += [name]
+            else:
+                testSet += [name]
+
+        results = shortBasedOnDate(learningSet, testSet)
+        if results[1] > 0:
+            timesThisWorks += 1
+            aggregateResults += results[1]
+            aggregateStartDate += results[0][0]
+            aggregateWindowWidth += results[0][1]
         else:
-            testSet += [name]
+            aggregateNegativeResults += results[1]
+        num += 1
+        if num % 500 == 0:
+            print("num = " + str(num))
+        stocks.close()
 
-    results = shortBasedOnDate(learningSet, testSet)
+    averageTotalOverAllSimulations = (aggregateResults + aggregateNegativeResults) / float(timesToTry)
+    averageTotalOverSuccessfulSimulations = aggregateResults / float(timesThisWorks)
+    averageStartDate = aggregateStartDate / float(timesThisWorks)
+    averageWindowWidth = aggregateWindowWidth /float(timesThisWorks)
+    print(" ")
+    print("This strategy worked " + str(timesThisWorks) + " time(s) out of " + str(timesToTry) + " trials.")
+    print("When the strategy worked, you would make an average profit of $" + str(averageTotalOverSuccessfulSimulations) + " per share.")
+    print("The average start date for the times it worked was " + str(averageStartDate) + " day(s) after IPO.")
+    print("The average time to hold each stock was " + str(averageWindowWidth) + " day(s)")
+    print(" ")
+    if averageTotalOverAllSimulations > 0:
+        print("The total average profit over both successful and nonsuccessful simulations was $" + str(averageTotalOverAllSimulations) + " per share.")
+    else:
+        print("The total average loss over both successful and nonsuccessful simulations was -$" + str(averageTotalOverAllSimulations) + " per share.")
 
-    #have up to here. now what?
-    print(results)
-    
+    #print("It has been found that by short selling an internet stock " + str(results[0][0]) + " days after its IPO, and holding for " + str(results[0][1]) + " days will on average make you a profit of $" + str(results[1]) + " per share.")
+    #used for when running once at a time
     
     
 if __name__ == "__main__":
